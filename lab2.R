@@ -38,7 +38,7 @@ GARCH3 <- function(n,p,q,a,b){
         count = length(h)
       }
       for(j in 1:count){
-        P = P+a[j]*h[i-j]*h[i-j]
+        P = P+a[j+1]*h[i-j]*h[i-j]
       }
     }
     Q = 0
@@ -102,7 +102,7 @@ MNK(Data$h,1000)
 
 ## Задание №3 ----
 
-garch(Data$h,order = c(1,0))
+garch(Data$h,order = c(0,1))
 
 ## Задание №4 ----
 
